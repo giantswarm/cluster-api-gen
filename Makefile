@@ -3,7 +3,7 @@
 #    devctl@4.9.2
 #
 
-include Makefile.*.mk
+# include Makefile.*.mk
 
 ##@ General
 
@@ -21,3 +21,16 @@ include Makefile.*.mk
 .PHONY: help
 help: ## Display this help.
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_0-9-]+:.*?##/ { printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
+
+generate:
+	@cd hack/tools; go generate ./...
+	@go mod tidy
+
+build:
+	@go build ./...
+
+go-test:
+	@go test ./api/...
+
+clean:
+	@rm -rf api cmd exp util bootstrap controllers feature controlplane errors internal test
