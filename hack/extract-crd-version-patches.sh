@@ -31,18 +31,8 @@ spec:
     versions:
 " > "$patch_file"
 
-        # $YQ e '.spec.versions[] | select (.name == "'"$version"'")' "$crd" > "$patch_file"
-        # $YQ eval-all -i '
-        #     select(fileIndex==1).spec.versions[] | select (.name == "'"$version"'") |
-        #     select(fileIndex==0).spec.versions += .
-        # ' "$patch_file" "$crd"
-
-        # echod="$(echo ".spec.versions[] | select (.name == \"$version\")" "$crd")"
-        # echo "$echod"
         version_data="$($YQ e ".spec.versions[] | select (.name == \"$version\")" "$crd")" \
             $YQ e -i '.spec.versions = [env(version_data)]' "$patch_file"
-        
-        # echo "$version_field"
     done
 
     # Delete version data from the CRD base
