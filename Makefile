@@ -69,3 +69,18 @@ go-test:
 .PHONY: delete-generated-go
 delete-generated-go:
 	@rm -rf api cmd exp util bootstrap controllers feature controlplane errors internal test
+
+## --------------------------------------
+## Release
+## --------------------------------------
+
+RELEASE_TAG := $(shell git describe --abbrev=0 2>/dev/null)
+RELEASE_DIR := out
+
+$(RELEASE_DIR):
+	mkdir -p $(RELEASE_DIR)/
+
+.PHONY: release-manifests
+release-manifests: $(RELEASE_DIR) ## Builds the manifests to publish with a release
+	# Build core-components.
+	kustomize build config > $(RELEASE_DIR)/core-components.yaml

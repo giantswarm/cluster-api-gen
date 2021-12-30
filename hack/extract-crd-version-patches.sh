@@ -32,7 +32,7 @@ do
         version_patches_dir="$CRD_VERSION_PATCHES_DIR/$version"
         mkdir -p "$version_patches_dir"
 
-        patch_file="$version_patches_dir/$crd_name.yaml"
+        patch_file="$version_patches_dir/$crd_filename"
         rm -f "$patch_file"
         
         echo "   Writing $version version patch"
