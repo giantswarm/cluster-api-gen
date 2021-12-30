@@ -1,0 +1,16 @@
+resources:
+  - bases/cluster.x-k8s.io_clusters.yaml
+  - bases/cluster.x-k8s.io_machinedeployments.yaml
+  - bases/cluster.x-k8s.io_machinehealthchecks.yaml
+  - bases/cluster.x-k8s.io_machinesets.yaml
+  - bases/cluster.x-k8s.io_machines.yaml
+patchesStrategicMerge:
+  - patches/versions/v1alpha2/cluster.x-k8s.io_clusters.yaml
+  - patches/versions/v1alpha3/cluster.x-k8s.io_clusters.yaml
+  - patches/versions/v1alpha2/cluster.x-k8s.io_machinedeployments.yaml
+  - patches/versions/v1alpha3/cluster.x-k8s.io_machinedeployments.yaml
+  - patches/versions/v1alpha3/cluster.x-k8s.io_machinehealthchecks.yaml
+  - patches/versions/v1alpha2/cluster.x-k8s.io_machinesets.yaml
+  - patches/versions/v1alpha3/cluster.x-k8s.io_machinesets.yaml
+  - patches/versions/v1alpha2/cluster.x-k8s.io_machines.yaml
+  - patches/versions/v1alpha3/cluster.x-k8s.io_machines.yaml

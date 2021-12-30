@@ -9,10 +9,23 @@ CRD_BASE_DIR="${CRD_DIR}/bases"
 CRD_VERSION_PATCHES_DIR="${CRD_DIR}/patches/versions"
 YQ="./$(dirname "$0")/tools/bin/yq"
 
+KUSTOMIZATION_FILE="${CRD_DIR}/kustomization.yaml"
+
+cat > "$KUSTOMIZATION_FILE" << EOF
+resources:
+
+patchesStrategicMerge:
+
+EOF
+
 for crd in "${CRD_BASE_DIR}"/*.yaml
 do
     crd_name="$(yq e '.metadata.name' "$crd")"
     echo "$crd_name"
+    crd_filename="$(basename "$crd")"
+
+    # Add CRD base to kustomization.yaml
+    $YQ eval -i '.resources += ["bases/'"$crd_filename"'"]' "$KUSTOMIZATION_FILE"
 
     for version in $(yq e '.spec.versions[].name' "$crd")
     do
@@ -33,6 +46,9 @@ spec:
 
         version_data="$($YQ e ".spec.versions[] | select (.name == \"$version\")" "$crd")" \
             $YQ e -i '.spec.versions = [env(version_data)]' "$patch_file"
+        
+        # Add CRD version patches to kustomization.yaml
+        $YQ eval -i '.patchesStrategicMerge += ["patches/versions/'"$version/$crd_filename"'"]' "$KUSTOMIZATION_FILE"
     done
 
     # Delete version data from the CRD base
