@@ -1,0 +1,25 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.9
+  creationTimestamp: null
+  name: machines.cluster.x-k8s.io
+spec:
+  group: cluster.x-k8s.io
+  names:
+    categories:
+      - cluster-api
+    kind: Machine
+    listKind: MachineList
+    plural: machines
+    shortNames:
+      - ma
+    singular: machine
+  scope: Namespaced
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
