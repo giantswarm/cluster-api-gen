@@ -17,6 +17,7 @@ spec:
       - ma
     singular: machine
   scope: Namespaced
+  versions: []
 status:
   acceptedNames:
     kind: ""

@@ -18,6 +18,7 @@ spec:
       - mhcs
     singular: machinehealthcheck
   scope: Namespaced
+  versions: []
 status:
   acceptedNames:
     kind: ""

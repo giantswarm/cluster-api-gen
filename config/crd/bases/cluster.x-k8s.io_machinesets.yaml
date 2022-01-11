@@ -17,6 +17,7 @@ spec:
       - ms
     singular: machineset
   scope: Namespaced
+  versions: []
 status:
   acceptedNames:
     kind: ""

@@ -17,6 +17,7 @@ spec:
       - md
     singular: machinedeployment
   scope: Namespaced
+  versions: []
 status:
   acceptedNames:
     kind: ""

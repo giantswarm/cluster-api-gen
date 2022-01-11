@@ -17,6 +17,7 @@ spec:
       - cl
     singular: cluster
   scope: Namespaced
+  versions: []
 status:
   acceptedNames:
     kind: ""
