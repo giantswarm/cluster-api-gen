@@ -115,3 +115,9 @@ $(RELEASE_DIR):
 release-manifests: $(RELEASE_DIR) ## Builds the manifests to publish with a release
 	# Build core-components.
 	kustomize build config > $(RELEASE_DIR)/core-components.yaml
+	# Build bootstrap-components.
+	# $(KUSTOMIZE) build bootstrap/kubeadm/config > $(RELEASE_DIR)/bootstrap-components.yaml
+	kustomize build bootstrap/kubeadm/config > $(RELEASE_DIR)/bootstrap-components.yaml
+	# Build control-plane-components.
+	# $(KUSTOMIZE) build controlplane/kubeadm/config > $(RELEASE_DIR)/control-plane-components.yaml
+	kustomize build controlplane/kubeadm/config > $(RELEASE_DIR)/control-plane-components.yaml
