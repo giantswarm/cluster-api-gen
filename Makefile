@@ -41,6 +41,11 @@ $(CONTROLLER_GEN): $(TOOLS_DIR)/go.mod # Build controller-gen from tools folder.
 ensure-tools:
 	./hack/ensure-yq.sh
 
+.PHONY: generate-go
+generate-go:
+	@cd hack/tools; go generate ./...
+	@go mod tidy
+
 .PHONY: generate-core-manifests
 generate-core-manifests: $(CONTROLLER_GEN) ## Generate manifests for the core provider e.g. CRD, RBAC etc.
 	$(CONTROLLER_GEN) \
@@ -53,13 +58,11 @@ generate-core-manifests: $(CONTROLLER_GEN) ## Generate manifests for the core pr
 generate-core-patches:
 	@cd hack; ./extract-crd-version-patches.sh
 
-.PHONY: generate-core
-generate-core: generate-core-manifests  generate-core-patches
+.PHONY: generate-yaml
+generate-yaml: generate-core-manifests  generate-core-patches
 
 .PHONY: generate
-generate:
-	@cd hack/tools; go generate ./...
-	@go mod tidy
+generate: generate-go generate-yaml
 
 .PHONY: build
 build:
