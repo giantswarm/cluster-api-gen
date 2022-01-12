@@ -23,15 +23,15 @@ else
     $YQ e -i '.resources = null' "$KUSTOMIZATION_FILE"
 
     # clean up API version patches
-    for ((i=$(yq eval '.patches | length' "$KUSTOMIZATION_FILE")-1; i>=0; i--)); do
-        patch_path=$(j="$i" yq e '.patches[env(j)].path' "$KUSTOMIZATION_FILE")
+    for ((i=$($YQ eval '.patches | length' "$KUSTOMIZATION_FILE")-1; i>=0; i--)); do
+        patch_path=$(j="$i" $YQ e '.patches[env(j)].path' "$KUSTOMIZATION_FILE")
 
         if [[ "$patch_path" = patches/versions* ]]; then
-            j="$i" yq e -i 'del .patches[env(j)]' "$KUSTOMIZATION_FILE"
+            j="$i" $YQ e -i 'del .patches[env(j)]' "$KUSTOMIZATION_FILE"
         fi
     done
 
-    patch_len=$(yq eval '.patches | length' "$KUSTOMIZATION_FILE")
+    patch_len=$($YQ eval '.patches | length' "$KUSTOMIZATION_FILE")
     if [ "$patch_len" -eq "0" ]; then
         $YQ e -i '.patches = null' "$KUSTOMIZATION_FILE"
     fi
@@ -39,14 +39,14 @@ fi
 
 for crd in "${CRD_BASE_DIR}"/*.yaml
 do
-    crd_name="$(yq e '.metadata.name' "$crd")"
+    crd_name="$($YQ e '.metadata.name' "$crd")"
     echo "$crd_name"
     crd_filename="$(basename "$crd")"
 
     # Add CRD base to kustomization.yaml
     $YQ eval -i '.resources += ["bases/'"$crd_filename"'"]' "$KUSTOMIZATION_FILE"
 
-    for version in $(yq e '.spec.versions[].name' "$crd")
+    for version in $($YQ e '.spec.versions[].name' "$crd")
     do
         version_patches_dir="$CRD_VERSION_PATCHES_DIR/$version"
         mkdir -p "$version_patches_dir"
