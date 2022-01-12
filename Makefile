@@ -53,6 +53,9 @@ generate-core-manifests: $(CONTROLLER_GEN) ## Generate manifests for the core pr
 generate-core-patches:
 	@cd hack; ./extract-crd-version-patches.sh
 
+.PHONY: generate-core
+generate-core: generate-core-manifests  generate-core-patches
+
 .PHONY: generate
 generate:
 	@cd hack/tools; go generate ./...

@@ -11,12 +11,31 @@ YQ="./$(dirname "$0")/tools/bin/yq"
 
 KUSTOMIZATION_FILE="${CRD_DIR}/kustomization.yaml"
 
-cat > "$KUSTOMIZATION_FILE" << EOF
+if [ ! -f "$KUSTOMIZATION_FILE" ]; then
+    cat > "$KUSTOMIZATION_FILE" << EOF
 resources:
 
 patches:
 
 EOF
+else
+    # clean up resource list
+    $YQ e -i '.resources = null' "$KUSTOMIZATION_FILE"
+
+    # clean up API version patches
+    for ((i=$(yq eval '.patches | length' "$KUSTOMIZATION_FILE")-1; i>=0; i--)); do
+        patch_path=$(j="$i" yq e '.patches[env(j)].path' "$KUSTOMIZATION_FILE")
+
+        if [[ "$patch_path" = patches/versions* ]]; then
+            j="$i" yq e -i 'del .patches[env(j)]' "$KUSTOMIZATION_FILE"
+        fi
+    done
+
+    patch_len=$(yq eval '.patches | length' "$KUSTOMIZATION_FILE")
+    if [ "$patch_len" -eq "0" ]; then
+        $YQ e -i '.patches = null' "$KUSTOMIZATION_FILE"
+    fi
+fi
 
 for crd in "${CRD_BASE_DIR}"/*.yaml
 do
@@ -56,6 +75,5 @@ target:
     done
 
     # Delete version data from the CRD base
-    # $YQ e -i 'del .spec.versions' "$crd"
     $YQ e -i '.spec.versions = []' "$crd"
 done
