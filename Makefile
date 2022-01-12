@@ -23,6 +23,7 @@ help: ## Display this help.
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_0-9-]+:.*?##/ { printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 
 # Directories
+EXP_DIR := exp
 TOOLS_DIR := hack/tools
 TOOLS_BIN_DIR := $(TOOLS_DIR)/bin
 BIN_DIR := bin
@@ -41,28 +42,52 @@ $(CONTROLLER_GEN): $(TOOLS_DIR)/go.mod # Build controller-gen from tools folder.
 ensure-tools:
 	./hack/ensure-yq.sh
 
+.PHONY: generate
+generate:
+	$(MAKE) generate-go
+	$(MAKE) generate-yaml
+
 .PHONY: generate-go
 generate-go:
 	@cd hack/tools; go generate ./...
 	@go mod tidy
 
+.PHONY: generate-yaml
+generate-yaml:
+	$(MAKE) generate-manifests
+	$(MAKE) generate-patches
+
+.PHONY: generate-manifests
+generate-manifests: ## Generate manifests e.g. CRD, RBAC etc.
+	$(MAKE) generate-core-manifests
+	$(MAKE) generate-kubeadm-bootstrap-manifests
+	$(MAKE) generate-kubeadm-control-plane-manifests
+
 .PHONY: generate-core-manifests
 generate-core-manifests: $(CONTROLLER_GEN) ## Generate manifests for the core provider e.g. CRD, RBAC etc.
 	$(CONTROLLER_GEN) \
 		paths=./api/... \
+		paths=./$(EXP_DIR)/api/... \
+		paths=./$(EXP_DIR)/addons/api/... \
 		crd:crdVersions=v1 \
-		output:crd:dir=./config/crd/bases \
-		output:webhook:dir=./config/webhook \
-		webhook
+		output:crd:dir=./config/crd/bases
 
-generate-core-patches:
+.PHONY: generate-kubeadm-bootstrap-manifests
+generate-kubeadm-bootstrap-manifests: $(CONTROLLER_GEN) ## Generate manifests for the kubeadm bootstrap provider e.g. CRD, RBAC etc.
+	$(CONTROLLER_GEN) \
+		paths=./bootstrap/kubeadm/api/... \
+		crd:crdVersions=v1 \
+		output:crd:dir=./bootstrap/kubeadm/config/crd/bases
+
+.PHONY: generate-kubeadm-control-plane-manifests
+generate-kubeadm-control-plane-manifests: $(CONTROLLER_GEN) ## Generate manifests for the kubeadm control plane provider e.g. CRD, RBAC etc.
+	$(CONTROLLER_GEN) \
+		paths=./controlplane/kubeadm/api/... \
+		crd:crdVersions=v1 \
+		output:crd:dir=./controlplane/kubeadm/config/crd/bases
+
+generate-patches:
 	@cd hack; ./extract-crd-version-patches.sh
-
-.PHONY: generate-yaml
-generate-yaml: generate-core-manifests  generate-core-patches
-
-.PHONY: generate
-generate: generate-go generate-yaml
 
 .PHONY: build
 build:
@@ -74,7 +99,7 @@ go-test:
 
 .PHONY: delete-generated-go
 delete-generated-go:
-	@rm -rf api cmd exp util bootstrap controllers feature controlplane errors internal test
+	@rm -rf api cmd exp util bootstrap/kubeadm/api controllers feature controlplane/kubeadm/api errors internal test
 
 ## --------------------------------------
 ## Release
