@@ -203,8 +203,8 @@ github.com/fsnotify/fsnotify v1.5.1/go.mod h1:T3375wBYaZdLLcVNkcVbzGHY7f1l/uK5T5
 github.com/getsentry/raven-go v0.2.0/go.mod h1:KungGk8q33+aIAZUIVWZDr2OfAEBsO49PX4NzFV5kcQ=
 github.com/ghodss/yaml v0.0.0-20150909031657-73d445a93680/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
 github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
-github.com/giantswarm/apigen v0.0.0-20220112141841-758f85f3fabb h1:NTgRQ3W7QaRdY1agb9Y9DSDWDjjEwhznmvRXFrgswT8=
-github.com/giantswarm/apigen v0.0.0-20220112141841-758f85f3fabb/go.mod h1:X8Y/GWp4aZdM/M8dZE3qSxFNhmrORi5X3NJGDDOp6xs=
+github.com/giantswarm/apigen v0.0.0-20220112162048-ab1e2b63b64f h1:AuwNlJndWpwgT2OmN/O29Q3NErryMlP8g/1/SR4vzNY=
+github.com/giantswarm/apigen v0.0.0-20220112162048-ab1e2b63b64f/go.mod h1:X8Y/GWp4aZdM/M8dZE3qSxFNhmrORi5X3NJGDDOp6xs=
 github.com/gliderlabs/ssh v0.2.2 h1:6zsha5zo/TWhRhwqCD3+EarCAgZ2yN28ipRnGPnwkI0=
 github.com/gliderlabs/ssh v0.2.2/go.mod h1:U7qILu1NlMHj9FlMhZLlkCdDnU1DBEAqr0aevW3Awn0=
 github.com/globalsign/mgo v0.0.0-20180905125535-1ca0a4f7cbcb/go.mod h1:xkRDCp4j0OGD1HRkm4kmhM+pmpv3AKq5SU7GMg4oO/Q=
