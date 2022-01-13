@@ -22,7 +22,7 @@ import (
 	. "github.com/onsi/gomega"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha4"
 )
 
 func TestMatchConditions(t *testing.T) {

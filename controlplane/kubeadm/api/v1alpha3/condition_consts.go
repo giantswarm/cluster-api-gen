@@ -21,7 +21,7 @@ import clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
 // Conditions and condition Reasons for the KubeadmControlPlane object
 
 const (
-	// MachinesReady reports an aggregate of current status of the machines controlled by the KubeadmControlPlane.
+	// MachinesReadyCondition reports an aggregate of current status of the machines controlled by the KubeadmControlPlane.
 	MachinesReadyCondition clusterv1.ConditionType = "MachinesReady"
 )
 

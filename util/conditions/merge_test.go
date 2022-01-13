@@ -21,7 +21,7 @@ import (
 
 	. "github.com/onsi/gomega"
 	corev1 "k8s.io/api/core/v1"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha4"
 )
 
 func TestNewConditionsGroup(t *testing.T) {
@@ -140,7 +140,7 @@ func TestMergeRespectPriority(t *testing.T) {
 				g.Expect(got).To(BeNil())
 				return
 			}
-			g.Expect(got).To(haveSameStateOf(tt.want))
+			g.Expect(got).To(HaveSameStateOf(tt.want))
 		})
 	}
 }
