@@ -706,6 +706,10 @@
                 format: int32
                 type: integer
               rolloutStrategy:
+                default:
+                  rollingUpdate:
+                    maxSurge: 1
+                  type: RollingUpdate
                 description: The RolloutStrategy to use to replace control plane machines with new ones.
                 properties:
                   rollingUpdate:
