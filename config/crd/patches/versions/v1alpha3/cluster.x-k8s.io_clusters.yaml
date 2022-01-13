@@ -9,7 +9,7 @@
     name: v1alpha3
     schema:
       openAPIV3Schema:
-        description: Cluster is the Schema for the clusters API
+        description: Cluster is the Schema for the clusters API.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
@@ -20,7 +20,7 @@
           metadata:
             type: object
           spec:
-            description: ClusterSpec defines the desired state of Cluster
+            description: ClusterSpec defines the desired state of Cluster.
             properties:
               clusterNetwork:
                 description: Cluster network configuration.
@@ -122,7 +122,7 @@
                 type: boolean
             type: object
           status:
-            description: ClusterStatus defines the observed state of Cluster
+            description: ClusterStatus defines the observed state of Cluster.
             properties:
               conditions:
                 description: Conditions defines current service state of the cluster.
@@ -193,6 +193,6 @@
             type: object
         type: object
     served: true
-    storage: true
+    storage: false
     subresources:
       status: {}

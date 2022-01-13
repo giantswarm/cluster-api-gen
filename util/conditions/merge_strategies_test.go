@@ -21,7 +21,7 @@ import (
 
 	. "github.com/onsi/gomega"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha4"
 )
 
 func TestGetStepCounterMessage(t *testing.T) {

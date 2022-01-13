@@ -2,25 +2,25 @@ resources:
   - bases/bootstrap.cluster.x-k8s.io_kubeadmconfigs.yaml
   - bases/bootstrap.cluster.x-k8s.io_kubeadmconfigtemplates.yaml
 patches:
-  - path: patches/versions/v1alpha2/bootstrap.cluster.x-k8s.io_kubeadmconfigs.yaml
-    target:
-      group: apiextensions.k8s.io
-      version: v1
-      kind: CustomResourceDefinition
-      name: kubeadmconfigs.bootstrap.cluster.x-k8s.io
   - path: patches/versions/v1alpha3/bootstrap.cluster.x-k8s.io_kubeadmconfigs.yaml
     target:
       group: apiextensions.k8s.io
       version: v1
       kind: CustomResourceDefinition
       name: kubeadmconfigs.bootstrap.cluster.x-k8s.io
-  - path: patches/versions/v1alpha2/bootstrap.cluster.x-k8s.io_kubeadmconfigtemplates.yaml
+  - path: patches/versions/v1alpha4/bootstrap.cluster.x-k8s.io_kubeadmconfigs.yaml
+    target:
+      group: apiextensions.k8s.io
+      version: v1
+      kind: CustomResourceDefinition
+      name: kubeadmconfigs.bootstrap.cluster.x-k8s.io
+  - path: patches/versions/v1alpha3/bootstrap.cluster.x-k8s.io_kubeadmconfigtemplates.yaml
     target:
       group: apiextensions.k8s.io
       version: v1
       kind: CustomResourceDefinition
       name: kubeadmconfigtemplates.bootstrap.cluster.x-k8s.io
-  - path: patches/versions/v1alpha3/bootstrap.cluster.x-k8s.io_kubeadmconfigtemplates.yaml
+  - path: patches/versions/v1alpha4/bootstrap.cluster.x-k8s.io_kubeadmconfigtemplates.yaml
     target:
       group: apiextensions.k8s.io
       version: v1

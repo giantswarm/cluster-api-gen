@@ -13,12 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+
 package conditions
 
 import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha4"
 	"github.com/giantswarm/cluster-api-gen/util"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 )

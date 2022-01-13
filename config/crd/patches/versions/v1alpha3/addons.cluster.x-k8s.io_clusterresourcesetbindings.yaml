@@ -15,7 +15,7 @@
           metadata:
             type: object
           spec:
-            description: ClusterResourceSetBindingSpec defines the desired state of ClusterResourceSetBinding
+            description: ClusterResourceSetBindingSpec defines the desired state of ClusterResourceSetBinding.
             properties:
               bindings:
                 description: Bindings is a list of ClusterResourceSets and their resources.
@@ -63,6 +63,6 @@
             type: object
         type: object
     served: true
-    storage: true
+    storage: false
     subresources:
       status: {}

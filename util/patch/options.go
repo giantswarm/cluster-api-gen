@@ -16,7 +16,7 @@ limitations under the License.
 
 package patch
 
-import clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
+import clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha4"
 
 // Option is some configuration that modifies options for a patch request.
 type Option interface {
