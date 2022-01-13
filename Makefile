@@ -97,9 +97,11 @@ build:
 go-test:
 	@go test ./api/...
 
+# #@rm -rf api cmd exp util bootstrap/kubeadm/api controllers feature controlplane/kubeadm/api errors internal test
+
 .PHONY: delete-generated-go
 delete-generated-go:
-	@rm -rf api cmd exp util bootstrap/kubeadm/api controllers feature controlplane/kubeadm/api errors internal test
+	@cd hack; ./delete-generated-files.sh
 
 ## --------------------------------------
 ## Release
