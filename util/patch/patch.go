@@ -22,6 +22,8 @@ import (
 	"reflect"
 	"time"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	"github.com/giantswarm/cluster-api-gen/util/conditions"
 	"github.com/pkg/errors"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
@@ -29,8 +31,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	kerrors "k8s.io/apimachinery/pkg/util/errors"
 	"k8s.io/apimachinery/pkg/util/wait"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
-	"github.com/giantswarm/cluster-api-gen/util/conditions"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/client/apiutil"
 )

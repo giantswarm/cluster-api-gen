@@ -19,8 +19,8 @@ package index
 import (
 	"testing"
 
-	. "github.com/onsi/gomega"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	. "github.com/onsi/gomega"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

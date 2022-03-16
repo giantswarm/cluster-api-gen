@@ -21,10 +21,10 @@ import (
 
 	. "github.com/onsi/gomega"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 )
 
 var (

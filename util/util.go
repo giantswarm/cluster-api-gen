@@ -27,6 +27,7 @@ import (
 	"time"
 
 	"github.com/blang/semver"
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	"github.com/gobuffalo/flect"
 	"github.com/pkg/errors"
 	corev1 "k8s.io/api/core/v1"
@@ -37,7 +38,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	k8sversion "k8s.io/apimachinery/pkg/version"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/client/apiutil"

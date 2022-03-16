@@ -18,10 +18,11 @@ package v1alpha3
 
 import (
 	apiconversion "k8s.io/apimachinery/pkg/conversion"
+	"sigs.k8s.io/controller-runtime/pkg/conversion"
+
 	"github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	"github.com/giantswarm/cluster-api-gen/util/conditions"
 	utilconversion "github.com/giantswarm/cluster-api-gen/util/conversion"
-	"sigs.k8s.io/controller-runtime/pkg/conversion"
 )
 
 func (src *Cluster) ConvertTo(dstRaw conversion.Hub) error {

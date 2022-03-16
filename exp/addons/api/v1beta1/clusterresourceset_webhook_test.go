@@ -21,8 +21,8 @@ import (
 
 	. "github.com/onsi/gomega"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	utildefaulting "github.com/giantswarm/cluster-api-gen/util/defaulting"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 func TestClusterResourcesetDefault(t *testing.T) {

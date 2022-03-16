@@ -19,10 +19,10 @@ package kubeconfig
 import (
 	"fmt"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/tools/clientcmd/api"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 )
 
 // FromEnvTestConfig returns a new Kubeconfig in byte form when running in envtest.

@@ -19,9 +19,9 @@ package conditions
 import (
 	"fmt"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	"github.com/onsi/gomega"
 	"github.com/onsi/gomega/types"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 )
 
 // MatchConditions returns a custom matcher to check equality of clusterv1.Conditions.

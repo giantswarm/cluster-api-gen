@@ -20,11 +20,11 @@ import (
 	"testing"
 	"time"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	"github.com/giantswarm/cluster-api-gen/util/collections"
 	. "github.com/onsi/gomega"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/utils/pointer"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
-	"github.com/giantswarm/cluster-api-gen/util/collections"
 )
 
 func TestMachineCollection(t *testing.T) {

@@ -19,12 +19,12 @@ package v1alpha3
 import (
 	"testing"
 
-	fuzz "github.com/google/gofuzz"
-	"k8s.io/apimachinery/pkg/api/apitesting/fuzzer"
-	runtimeserializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
 	clusterv1exp "github.com/giantswarm/cluster-api-gen/exp/api/v1beta1"
 	utilconversion "github.com/giantswarm/cluster-api-gen/util/conversion"
+	fuzz "github.com/google/gofuzz"
+	"k8s.io/apimachinery/pkg/api/apitesting/fuzzer"
+	runtimeserializer "k8s.io/apimachinery/pkg/runtime/serializer"
 )
 
 func TestFuzzyConversion(t *testing.T) {

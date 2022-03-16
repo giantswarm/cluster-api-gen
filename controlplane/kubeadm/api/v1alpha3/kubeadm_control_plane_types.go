@@ -17,10 +17,10 @@ limitations under the License.
 package v1alpha3
 
 import (
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/intstr"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
 
 	cabpkv1 "github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1alpha3"
 	"github.com/giantswarm/cluster-api-gen/errors"

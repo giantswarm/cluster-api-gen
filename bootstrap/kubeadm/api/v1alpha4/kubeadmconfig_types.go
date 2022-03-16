@@ -17,8 +17,8 @@ limitations under the License.
 package v1alpha4
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha4"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // Format specifies the output format of the bootstrap data

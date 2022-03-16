@@ -17,10 +17,10 @@ limitations under the License.
 package conditions
 
 import (
-	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	"k8s.io/apimachinery/pkg/runtime"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	"github.com/giantswarm/cluster-api-gen/util"
+	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
+	"k8s.io/apimachinery/pkg/runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 )
 

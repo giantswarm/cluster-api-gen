@@ -20,8 +20,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pkg/errors"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	"github.com/pkg/errors"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )

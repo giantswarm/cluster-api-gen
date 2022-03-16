@@ -20,13 +20,13 @@ import (
 	"testing"
 	"time"
 
+	bootstrapv1 "github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1beta1"
+	utildefaulting "github.com/giantswarm/cluster-api-gen/util/defaulting"
 	. "github.com/onsi/gomega"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/utils/pointer"
-	bootstrapv1 "github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1beta1"
-	utildefaulting "github.com/giantswarm/cluster-api-gen/util/defaulting"
 )
 
 func TestKubeadmControlPlaneDefault(t *testing.T) {

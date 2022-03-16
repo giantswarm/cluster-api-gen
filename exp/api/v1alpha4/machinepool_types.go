@@ -17,10 +17,10 @@ limitations under the License.
 package v1alpha4
 
 import (
-	corev1 "k8s.io/api/core/v1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha4"
 	capierrors "github.com/giantswarm/cluster-api-gen/errors"
+	corev1 "k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 const (

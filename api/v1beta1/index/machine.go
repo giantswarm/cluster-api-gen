@@ -20,10 +20,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/pkg/errors"
-	"k8s.io/utils/pointer"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	"github.com/giantswarm/cluster-api-gen/controllers/noderefutil"
+	"github.com/pkg/errors"
+	"k8s.io/utils/pointer"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )

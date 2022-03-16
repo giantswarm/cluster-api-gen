@@ -17,9 +17,9 @@ limitations under the License.
 package util
 
 import (
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 

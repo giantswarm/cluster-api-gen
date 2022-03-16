@@ -19,9 +19,9 @@ package conditions
 import (
 	"testing"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	. "github.com/onsi/gomega"
 	corev1 "k8s.io/api/core/v1"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 )
 
 func TestNewConditionsGroup(t *testing.T) {

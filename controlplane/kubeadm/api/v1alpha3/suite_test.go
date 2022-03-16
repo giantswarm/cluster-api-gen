@@ -20,9 +20,9 @@ import (
 	"os"
 	"testing"
 
+	"github.com/giantswarm/cluster-api-gen/internal/envtest"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/client-go/kubernetes/scheme"
-	"github.com/giantswarm/cluster-api-gen/internal/envtest"
 	ctrl "sigs.k8s.io/controller-runtime"
 	// +kubebuilder:scaffold:imports
 )

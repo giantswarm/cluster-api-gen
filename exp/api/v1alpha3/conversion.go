@@ -17,8 +17,8 @@ limitations under the License.
 package v1alpha3
 
 import (
-	apimachineryconversion "k8s.io/apimachinery/pkg/conversion"
 	"github.com/giantswarm/cluster-api-gen/exp/api/v1beta1"
+	apimachineryconversion "k8s.io/apimachinery/pkg/conversion"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	"sigs.k8s.io/controller-runtime/pkg/conversion"
 )

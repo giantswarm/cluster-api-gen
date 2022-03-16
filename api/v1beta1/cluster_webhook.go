@@ -21,12 +21,12 @@ import (
 	"strings"
 
 	"github.com/blang/semver"
+	"github.com/giantswarm/cluster-api-gen/feature"
+	"github.com/giantswarm/cluster-api-gen/util/version"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/sets"
 	"k8s.io/apimachinery/pkg/util/validation/field"
-	"github.com/giantswarm/cluster-api-gen/feature"
-	"github.com/giantswarm/cluster-api-gen/util/version"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 )

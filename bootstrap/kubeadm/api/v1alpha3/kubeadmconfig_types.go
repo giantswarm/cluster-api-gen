@@ -17,9 +17,9 @@ limitations under the License.
 package v1alpha3
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
 	"github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/types/upstreamv1beta1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // Format specifies the output format of the bootstrap data

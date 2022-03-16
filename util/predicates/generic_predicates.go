@@ -19,9 +19,9 @@ package predicates
 import (
 	"strings"
 
-	"github.com/go-logr/logr"
 	"github.com/giantswarm/cluster-api-gen/util/annotations"
 	"github.com/giantswarm/cluster-api-gen/util/labels"
+	"github.com/go-logr/logr"
 
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/event"

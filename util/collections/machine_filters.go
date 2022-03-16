@@ -18,13 +18,13 @@ package collections
 
 import (
 	"github.com/blang/semver"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/labels"
-	"k8s.io/apimachinery/pkg/selection"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	controlplanev1 "github.com/giantswarm/cluster-api-gen/controlplane/kubeadm/api/v1beta1"
 	"github.com/giantswarm/cluster-api-gen/util"
 	"github.com/giantswarm/cluster-api-gen/util/conditions"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/labels"
+	"k8s.io/apimachinery/pkg/selection"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

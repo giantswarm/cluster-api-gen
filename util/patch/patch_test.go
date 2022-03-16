@@ -23,15 +23,15 @@ import (
 	"github.com/google/go-cmp/cmp"
 	. "github.com/onsi/gomega"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	"github.com/giantswarm/cluster-api-gen/controllers/external"
+	"github.com/giantswarm/cluster-api-gen/util/conditions"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/utils/pointer"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
-	"github.com/giantswarm/cluster-api-gen/controllers/external"
-	"github.com/giantswarm/cluster-api-gen/util/conditions"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

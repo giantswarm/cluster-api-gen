@@ -17,8 +17,8 @@ limitations under the License.
 package upstreamv1beta1
 
 import (
-	apimachineryconversion "k8s.io/apimachinery/pkg/conversion"
 	bootstrapv1 "github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1beta1"
+	apimachineryconversion "k8s.io/apimachinery/pkg/conversion"
 	"sigs.k8s.io/controller-runtime/pkg/conversion"
 )
 

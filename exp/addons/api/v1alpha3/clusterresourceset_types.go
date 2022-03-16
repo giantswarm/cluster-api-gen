@@ -17,9 +17,9 @@ limitations under the License.
 package v1alpha3
 
 import (
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
 )
 
 const (

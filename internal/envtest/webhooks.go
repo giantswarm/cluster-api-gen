@@ -24,10 +24,10 @@ import (
 	"strings"
 	"time"
 
+	utilyaml "github.com/giantswarm/cluster-api-gen/util/yaml"
 	admissionv1 "k8s.io/api/admissionregistration/v1"
 	"k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/klog/v2"
-	utilyaml "github.com/giantswarm/cluster-api-gen/util/yaml"
 	"sigs.k8s.io/controller-runtime/pkg/envtest"
 )
 

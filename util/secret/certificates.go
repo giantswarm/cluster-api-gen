@@ -29,14 +29,14 @@ import (
 	"strings"
 	"time"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	bootstrapv1 "github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1beta1"
+	"github.com/giantswarm/cluster-api-gen/util/certs"
 	"github.com/pkg/errors"
 	corev1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/util/cert"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
-	bootstrapv1 "github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1beta1"
-	"github.com/giantswarm/cluster-api-gen/util/certs"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

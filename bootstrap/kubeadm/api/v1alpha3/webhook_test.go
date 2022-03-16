@@ -22,10 +22,10 @@ import (
 
 	. "github.com/onsi/gomega"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/utils/pointer"
 	"github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/types/upstreamv1beta1"
 	"github.com/giantswarm/cluster-api-gen/util"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/utils/pointer"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

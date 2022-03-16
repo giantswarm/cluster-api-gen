@@ -20,8 +20,8 @@ package collections
 import (
 	"context"
 
-	"github.com/pkg/errors"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	"github.com/pkg/errors"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

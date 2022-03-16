@@ -21,11 +21,11 @@ import (
 
 	. "github.com/onsi/gomega"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	utildefaulting "github.com/giantswarm/cluster-api-gen/util/defaulting"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/utils/pointer"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
-	utildefaulting "github.com/giantswarm/cluster-api-gen/util/defaulting"
 )
 
 func TestMachinePoolDefault(t *testing.T) {

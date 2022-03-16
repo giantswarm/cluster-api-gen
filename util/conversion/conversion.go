@@ -24,6 +24,8 @@ import (
 	"strings"
 	"testing"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	"github.com/giantswarm/cluster-api-gen/util"
 	"github.com/google/go-cmp/cmp"
 	fuzz "github.com/google/gofuzz"
 	"github.com/onsi/gomega"
@@ -37,8 +39,6 @@ import (
 	runtimeserializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	"k8s.io/apimachinery/pkg/util/json"
 	"k8s.io/client-go/kubernetes/scheme"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
-	"github.com/giantswarm/cluster-api-gen/util"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/conversion"

@@ -19,11 +19,11 @@ package external
 import (
 	"sync"
 
+	"github.com/giantswarm/cluster-api-gen/util/predicates"
 	"github.com/go-logr/logr"
 	"github.com/pkg/errors"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
-	"github.com/giantswarm/cluster-api-gen/util/predicates"
 	"sigs.k8s.io/controller-runtime/pkg/controller"
 	"sigs.k8s.io/controller-runtime/pkg/handler"
 	"sigs.k8s.io/controller-runtime/pkg/source"

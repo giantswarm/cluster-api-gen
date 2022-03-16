@@ -19,12 +19,12 @@ package v1beta1
 import (
 	"testing"
 
+	"github.com/giantswarm/cluster-api-gen/feature"
 	. "github.com/onsi/gomega"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	utilfeature "k8s.io/component-base/featuregate/testing"
 	"k8s.io/utils/pointer"
-	"github.com/giantswarm/cluster-api-gen/feature"
 )
 
 func TestKubeadmControlPlaneTemplateValidationFeatureGateEnabled(t *testing.T) {

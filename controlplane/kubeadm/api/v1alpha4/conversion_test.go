@@ -22,11 +22,11 @@ import (
 	fuzz "github.com/google/gofuzz"
 	"k8s.io/apimachinery/pkg/api/apitesting/fuzzer"
 
-	runtimeserializer "k8s.io/apimachinery/pkg/runtime/serializer"
 	cabpkv1 "github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1beta1"
 	"github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/types/upstreamv1beta1"
 	"github.com/giantswarm/cluster-api-gen/controlplane/kubeadm/api/v1beta1"
 	utilconversion "github.com/giantswarm/cluster-api-gen/util/conversion"
+	runtimeserializer "k8s.io/apimachinery/pkg/runtime/serializer"
 )
 
 func TestFuzzyConversion(t *testing.T) {

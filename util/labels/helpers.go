@@ -18,8 +18,8 @@ limitations under the License.
 package labels
 
 import (
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 // IsTopologyOwned returns true if the object has the `topology.cluster.x-k8s.io/owned` label.

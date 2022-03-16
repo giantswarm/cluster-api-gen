@@ -46,6 +46,7 @@ ensure-tools:
 generate:
 	$(MAKE) delete-generated-go
 	@cd hack/tools; go generate ./...
+	@go fmt ./...
 	@go mod tidy
 
 .PHONY: build

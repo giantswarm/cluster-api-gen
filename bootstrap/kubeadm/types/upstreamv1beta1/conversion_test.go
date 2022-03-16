@@ -19,11 +19,11 @@ package upstreamv1beta1
 import (
 	"testing"
 
+	"github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1beta1"
+	utilconversion "github.com/giantswarm/cluster-api-gen/util/conversion"
 	fuzz "github.com/google/gofuzz"
 	"k8s.io/apimachinery/pkg/api/apitesting/fuzzer"
 	runtimeserializer "k8s.io/apimachinery/pkg/runtime/serializer"
-	"github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1beta1"
-	utilconversion "github.com/giantswarm/cluster-api-gen/util/conversion"
 )
 
 func TestFuzzyConversion(t *testing.T) {

@@ -23,13 +23,13 @@ import (
 	"github.com/giantswarm/cluster-api-gen/util/collections"
 	"sigs.k8s.io/controller-runtime/pkg/client/fake"
 
-	. "github.com/onsi/gomega"
 	"github.com/giantswarm/cluster-api-gen/util/conditions"
+	. "github.com/onsi/gomega"
 
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/utils/pointer"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	controlplanev1 "github.com/giantswarm/cluster-api-gen/controlplane/kubeadm/api/v1beta1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/utils/pointer"
 )
 
 func falseFilter(_ *clusterv1.Machine) bool {

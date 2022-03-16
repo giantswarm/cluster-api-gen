@@ -19,10 +19,10 @@ package v1beta1
 import (
 	"testing"
 
+	utildefaulting "github.com/giantswarm/cluster-api-gen/util/defaulting"
 	. "github.com/onsi/gomega"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/utils/pointer"
-	utildefaulting "github.com/giantswarm/cluster-api-gen/util/defaulting"
 )
 
 func TestMachineSetDefault(t *testing.T) {

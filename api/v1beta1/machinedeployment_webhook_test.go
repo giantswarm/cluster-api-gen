@@ -21,10 +21,10 @@ import (
 
 	. "github.com/onsi/gomega"
 
+	utildefaulting "github.com/giantswarm/cluster-api-gen/util/defaulting"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/utils/pointer"
-	utildefaulting "github.com/giantswarm/cluster-api-gen/util/defaulting"
 )
 
 func TestMachineDeploymentDefault(t *testing.T) {

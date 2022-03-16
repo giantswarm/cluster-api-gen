@@ -19,8 +19,8 @@ package index
 import (
 	"fmt"
 
-	corev1 "k8s.io/api/core/v1"
 	"github.com/giantswarm/cluster-api-gen/controllers/noderefutil"
+	corev1 "k8s.io/api/core/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

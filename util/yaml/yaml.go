@@ -25,6 +25,8 @@ import (
 	"strings"
 
 	"github.com/MakeNowJust/heredoc"
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	"github.com/giantswarm/cluster-api-gen/util"
 	"github.com/pkg/errors"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
@@ -33,8 +35,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/serializer/streaming"
 	apiyaml "k8s.io/apimachinery/pkg/util/yaml"
 	"k8s.io/client-go/kubernetes/scheme"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
-	"github.com/giantswarm/cluster-api-gen/util"
 	"sigs.k8s.io/yaml"
 )
 

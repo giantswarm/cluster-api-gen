@@ -19,9 +19,9 @@ package conditions
 import (
 	"reflect"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	"github.com/google/go-cmp/cmp"
 	"github.com/pkg/errors"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 )
 
 // Patch defines a list of operations to change a list of conditions into another.

@@ -19,11 +19,11 @@ package index
 import (
 	"testing"
 
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
+	"github.com/giantswarm/cluster-api-gen/controllers/noderefutil"
 	. "github.com/onsi/gomega"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/utils/pointer"
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
-	"github.com/giantswarm/cluster-api-gen/controllers/noderefutil"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

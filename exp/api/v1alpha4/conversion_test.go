@@ -19,9 +19,9 @@ package v1alpha4
 import (
 	"testing"
 
-	"k8s.io/apimachinery/pkg/api/apitesting/fuzzer"
 	clusterv1exp "github.com/giantswarm/cluster-api-gen/exp/api/v1beta1"
 	utilconversion "github.com/giantswarm/cluster-api-gen/util/conversion"
+	"k8s.io/apimachinery/pkg/api/apitesting/fuzzer"
 )
 
 func TestFuzzyConversion(t *testing.T) {

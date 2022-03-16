@@ -17,12 +17,12 @@ limitations under the License.
 package v1beta1
 
 import (
-	corev1 "k8s.io/api/core/v1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/util/intstr"
 	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 	cabpkv1 "github.com/giantswarm/cluster-api-gen/bootstrap/kubeadm/api/v1beta1"
 	"github.com/giantswarm/cluster-api-gen/errors"
+	corev1 "k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/util/intstr"
 )
 
 // RolloutStrategyType defines the rollout strategies for a KubeadmControlPlane.
