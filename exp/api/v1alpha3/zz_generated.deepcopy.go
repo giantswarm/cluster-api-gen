@@ -22,7 +22,7 @@ package v1alpha3
 
 import (
 	"k8s.io/api/core/v1"
-	"k8s.io/apimachinery/pkg/runtime"
+	runtime "k8s.io/apimachinery/pkg/runtime"
 	apiv1alpha3 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
 	"github.com/giantswarm/cluster-api-gen/errors"
 )

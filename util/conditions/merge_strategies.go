@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"strings"
 
-	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1alpha3"
+	clusterv1 "github.com/giantswarm/cluster-api-gen/api/v1beta1"
 )
 
 // mergeOptions allows to set strategies for merging a set of conditions into a single condition,
