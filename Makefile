@@ -44,50 +44,8 @@ ensure-tools:
 
 .PHONY: generate
 generate:
-	$(MAKE) generate-go
-	$(MAKE) generate-yaml
-
-.PHONY: generate-go
-generate-go:
 	@cd hack/tools; go generate ./...
 	@go mod tidy
-
-.PHONY: generate-yaml
-generate-yaml:
-	$(MAKE) generate-manifests
-	$(MAKE) generate-patches
-
-.PHONY: generate-manifests
-generate-manifests: ## Generate manifests e.g. CRD, RBAC etc.
-	$(MAKE) generate-core-manifests
-	$(MAKE) generate-kubeadm-bootstrap-manifests
-	$(MAKE) generate-kubeadm-control-plane-manifests
-
-.PHONY: generate-core-manifests
-generate-core-manifests: $(CONTROLLER_GEN) ## Generate manifests for the core provider e.g. CRD, RBAC etc.
-	$(CONTROLLER_GEN) \
-		paths=./api/... \
-		paths=./$(EXP_DIR)/api/... \
-		paths=./$(EXP_DIR)/addons/api/... \
-		crd:crdVersions=v1 \
-		output:crd:dir=./config/crd/bases
-
-.PHONY: generate-kubeadm-bootstrap-manifests
-generate-kubeadm-bootstrap-manifests: $(CONTROLLER_GEN) ## Generate manifests for the kubeadm bootstrap provider e.g. CRD, RBAC etc.
-	$(CONTROLLER_GEN) \
-		paths=./bootstrap/kubeadm/api/... \
-		crd:crdVersions=v1 \
-		output:crd:dir=./bootstrap/kubeadm/config/crd/bases
-
-.PHONY: generate-kubeadm-control-plane-manifests
-generate-kubeadm-control-plane-manifests: $(CONTROLLER_GEN) ## Generate manifests for the kubeadm control plane provider e.g. CRD, RBAC etc.
-	$(CONTROLLER_GEN) \
-		paths=./controlplane/kubeadm/api/... \
-		crd:crdVersions=v1 \
-		output:crd:dir=./controlplane/kubeadm/config/crd/bases
-
-generate-patches:
-	@cd hack; ./extract-crd-version-patches.sh
 
 .PHONY: build
 build:
