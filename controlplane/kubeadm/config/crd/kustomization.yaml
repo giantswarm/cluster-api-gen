@@ -1,9 +1,0 @@
-resources:
-  - bases/controlplane.cluster.x-k8s.io_kubeadmcontrolplanes.yaml
-patches:
-  - path: patches/versions/v1alpha3/controlplane.cluster.x-k8s.io_kubeadmcontrolplanes.yaml
-    target:
-      group: apiextensions.k8s.io
-      version: v1
-      kind: CustomResourceDefinition
-      name: kubeadmcontrolplanes.controlplane.cluster.x-k8s.io
