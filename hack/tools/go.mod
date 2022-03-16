@@ -3,7 +3,7 @@ module github.com/giantswarm/cluster-api-gen/hack/tools
 go 1.17
 
 require (
-	github.com/giantswarm/apigen v0.0.0-20220113123758-2167ada50d77
+	github.com/giantswarm/apigen v0.0.0-20220316145154-17936b89cad5
 	sigs.k8s.io/controller-tools v0.2.9
 )
 
