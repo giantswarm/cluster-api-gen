@@ -9,10 +9,6 @@
     "api/v1beta1/conversion.go",
     "api/v1beta1/doc.go",
     "api/v1beta1/groupversion_info.go",
-    "api/v1beta1/index/cluster.go",
-    "api/v1beta1/index/index.go",
-    "api/v1beta1/index/machine.go",
-    "api/v1beta1/index/node.go",
     "api/v1beta1/machine_phase_types.go",
     "api/v1beta1/machine_types.go",
     "api/v1beta1/machinedeployment_types.go",
@@ -35,8 +31,6 @@
     "bootstrap/kubeadm/api/v1beta1/kubeadmconfigtemplate_types.go",
     "bootstrap/kubeadm/api/v1beta1/zz_generated.deepcopy.go",
     "bootstrap/kubeadm/api/v1beta1/zz_generated.deepcopy.go",
-    "controllers/noderefutil/providerid.go",
-    "controllers/noderefutil/util.go",
     "controlplane/kubeadm/api/v1beta1/condition_consts.go",
     "controlplane/kubeadm/api/v1beta1/conversion.go",
     "controlplane/kubeadm/api/v1beta1/doc.go",
@@ -62,8 +56,6 @@
     "exp/api/v1beta1/doc.go",
     "exp/api/v1beta1/groupversion_info.go",
     "exp/api/v1beta1/machinepool_types.go",
-    "exp/api/v1beta1/zz_generated.deepcopy.go",
-    "feature/feature.go",
-    "feature/gates.go"
+    "exp/api/v1beta1/zz_generated.deepcopy.go"
   ]
 }
